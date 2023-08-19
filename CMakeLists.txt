@@ -554,7 +554,7 @@ if(${PROJECT_NAME}_ENABLE_ACVO)
 
 endif()
 add_executable(cvo_align_gpu_orb ${PROJECT_SOURCE_DIR}/src/experiments/main_cvo_gpu_align_orb.cpp)
-target_include_directories(cvo_align_gpu_img PUBLIC
+target_include_directories(cvo_align_gpu_orb PUBLIC
         #$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}>
         #$<BUILD_INTERFACE:${UnifiedCvo_BINARY_DIR}/include>
         "$<BUILD_INTERFACE:${CVO_INCLUDE_DIRS}>"
