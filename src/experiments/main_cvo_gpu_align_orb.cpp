@@ -50,8 +50,8 @@ int main(int argc, char *argv[]) {
   cv::Ptr<cv::DescriptorExtractor> descriptor = cv::ORB::create();
   detector->detect ( img_1,keypoints_1 );
   detector->detect ( img_2,keypoints_2 );
-  descriptor->compute ( img_1, keypoints_1, descriptors_1 );
-  descriptor->compute ( img_2, keypoints_2, descriptors_2 );
+  descriptor->compute ( img_1, keypoints_1, descriptor_1 );
+  descriptor->compute ( img_2, keypoints_2, descriptor_2 );
   cout << "# Keypoints: " << keypoints_1.size() << " " << keypoints_2.size() << "\n";
 
 //  pcl::PointCloud<pcl::PointXYZRGB>::Ptr source_pcd(new pcl::PointCloud<pcl::PointXYZRGB>);
