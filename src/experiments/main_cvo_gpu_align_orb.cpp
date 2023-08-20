@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
   cv::Mat img_1 = cv::imread(img1_file, CV_LOAD_IMAGE_COLOR);
   cv::Mat img_2 = cv::imread(img2_file, CV_LOAD_IMAGE_COLOR);
   std::vector<cv::KeyPoint> keypoints_1, keypoints_2;
-  cv::Mat descriptor1, descriptor2;
+  cv::Mat descriptor_1, descriptor_2;
   cv::Ptr<cv::FeatureDetector> detector = cv::ORB::create();
   cv::Ptr<cv::DescriptorExtractor> descriptor = cv::ORB::create();
   detector->detect ( img_1,keypoints_1 );
