@@ -304,7 +304,21 @@ namespace cvo{
           cv::circle(heatmap, cv::Point( output_uv[i].first, output_uv[i].second ), 1, cv::Scalar(255, 0 ,0), 1);
         cv::imwrite("FAST_selected_pixels.png", heatmap);
       }
-    } 
+    }
+
+    else if (pt_selection_method == CvoPointCloud::CV_ORB){
+      std::vector<cv::KeyPoint> keypoints;
+      cv::Ptr<cv::FeatureDetector> detector = cv::ORB::create(20000);
+      detector->detect(left_gray, keypoints);
+
+      for (auto && kp: keypoints) {
+        std::pair<int, int> xy{ (int)kp.pt.x, (int)kp.pt.y};
+        output_uv.push_back(xy);
+        edge_or_surface.push_back(1);
+        edge_or_surface.push_back(0);
+      }
+    }
+
     /*****************************************/
     // using DSO semi dense point selector
     else if (pt_selection_method == CvoPointCloud::DSO_EDGES) {

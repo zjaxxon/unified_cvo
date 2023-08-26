@@ -40,6 +40,7 @@ namespace cvo {
 
     enum PointSelectionMethod {
       CV_FAST,
+      CV_ORB,
       RANDOM,
       DSO_EDGES,
       DSO_EDGES_WITH_RANDOM,
