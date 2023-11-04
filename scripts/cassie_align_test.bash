@@ -1,0 +1,1 @@
+./build/bin/cvo_align_gpu_two_pcd ./demo_data/000000.pcd ./demo_data/004786.pcd cvo_params/cvo_outdoor_params.yaml
