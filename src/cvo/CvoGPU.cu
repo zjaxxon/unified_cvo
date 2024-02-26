@@ -1709,7 +1709,7 @@ namespace cvo{
       return 0;
     }
 
-    Eigen::Matrix init_guess_transform = init_guess_T;
+    Eigen::Matrix4f init_guess_transform = init_guess_T;
     double global_guess_time = 0;
     if (this->params.is_global_angle_registration > 0) {
       init_guess_transform =  get_nearest_init_pose(*this,

@@ -655,6 +655,14 @@ target_include_directories(cvo_align_gpu_two_pcd PUBLIC
         $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/include/${PROJECT_NAME}-${${PROJECT_NAME}_VERSION}> )
       target_link_libraries(cvo_align_gpu_two_pcd cvo_gpu_rgb cvo_utils boost_filesystem boost_system pcl_io pcl_common)
 
+add_executable(edge_detection ${PROJECT_SOURCE_DIR}/src/experiments/main_edge_detection.cpp)
+target_include_directories(edge_detection PUBLIC
+        #$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}>
+        #$<BUILD_INTERFACE:${UnifiedCvo_BINARY_DIR}/include>
+        "$<BUILD_INTERFACE:${CVO_INCLUDE_DIRS}>"
+        $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/include/${PROJECT_NAME}-${${PROJECT_NAME}_VERSION}> )
+target_link_libraries(edge_detection cvo_gpu_lidar cvo_utils boost_filesystem boost_system pcl_io pcl_common)
+
 add_executable(cvo_align_gpu_two_color_pcd_global ${PROJECT_SOURCE_DIR}/src/experiments/main_cvo_gpu_align_two_color_pcd_global.cpp)
 target_include_directories(cvo_align_gpu_two_color_pcd_global PUBLIC
 	#$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}> 

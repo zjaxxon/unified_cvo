@@ -140,7 +140,7 @@ namespace cvo
                                                 std::vector <float> & edge_or_surface,
                                                 std::vector <int> & selected_indexes) {
     //using loam_velodyne's functions
-    LoamScanRegistration lsr(-24.9f, 2, 64);
+    LoamScanRegistration lsr(-24.9f, 2, 128);
     lsr.process(*laserCloudIn, pc_out, edge_or_surface, selected_indexes);
 
     // pcl::io::savePCDFile("raw_input.pcd", *laserCloudIn);

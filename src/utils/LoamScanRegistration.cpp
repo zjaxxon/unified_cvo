@@ -103,7 +103,7 @@ namespace cvo
       point.x = laserCloudIn[i].x;
       point.y = laserCloudIn[i].y;
       point.z = laserCloudIn[i].z;
-      point.intensity = i;
+      point.intensity = laserCloudIn[i].intensity;
       // point.intensity = laserCloudIn[i].intensity;
       // point.x = laserCloudIn[i].y;
       // point.y = laserCloudIn[i].z;
